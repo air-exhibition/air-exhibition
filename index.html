@@ -39,6 +39,13 @@
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(8px);
         }
+        .fade-out {
+            opacity: 0;
+            transform: scale(0.98);
+        }
+        #artwork-img {
+            transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+        }
     </style>
 </head>
 <body class="font-serif antialiased pb-24 selection:bg-black selection:text-white">
@@ -56,7 +63,7 @@
     <!-- メインコンテンツ -->
     <main class="max-w-md mx-auto px-5 pt-8 space-y-16">
 
-        <!-- プロフィール＆展示案内（カード枠線を完全除去） -->
+        <!-- プロフィール＆展示案内 -->
         <section class="space-y-6 pt-2">
             <div class="space-y-1">
                 <span class="font-cinzel text-xs tracking-widest text-textMuted uppercase block">Photographer</span>
@@ -85,489 +92,67 @@
 
         <hr class="border-gray-100">
 
-        <!-- 作品インデックス（シンプルで押しやすい目次） -->
+        <!-- 作品インデックス（Portfolio） -->
         <section id="index-section" class="scroll-mt-20 space-y-4">
             <div class="flex items-baseline justify-between">
                 <h3 class="text-xs font-bold tracking-widest text-textMain font-cinzel uppercase">portfolio</h3>
                 <span class="text-[10px] text-textMuted font-sans">全12作品 / タップでジャンプ</span>
             </div>
 
-            <div class="grid grid-cols-3 gap-2 font-sans">
-                <!-- 大サイズ（L表記） -->
-                <a href="#work-01" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 01</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">幾何学</span>
-                </a>
-                <a href="#work-02" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 02</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">孤高</span>
-                </a>
-                <a href="#work-03" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 03</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">伝統</span>
-                </a>
-                <a href="#work-04" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 04</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">碁盤</span>
-                </a>
-
-                <!-- 通常サイズ -->
-                <a href="#work-05" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 05</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">象徴</span>
-                </a>
-                <a href="#work-06" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 06</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">息吹</span>
-                </a>
-                <a href="#work-07" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 07</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">妖艶</span>
-                </a>
-                <a href="#work-08" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 08</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">残滓</span>
-                </a>
-                <a href="#work-09" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 09</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">螺旋</span>
-                </a>
-                <a href="#work-10" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 10</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">黄昏</span>
-                </a>
-                <a href="#work-11" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 11</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">静寂</span>
-                </a>
-                <a href="#work-12" class="flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded">
-                    <span class="text-[9px] text-textMuted font-cinzel">No. 12</span>
-                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">鎹</span>
-                </a>
+            <div class="grid grid-cols-3 gap-2 font-sans" id="portfolio-grid">
+                <!-- JavaScriptで動的生成 -->
             </div>
         </section>
 
         <hr class="border-gray-100">
 
-        <!-- 全12作品リスト（余計な枠線・背景・影を全面カット） -->
-        <div class="space-y-20">
+        <!-- 作品詳細表示ビュー（1枚ずつ切り替え＆ドットインジケーター） -->
+        <section id="detail-section" class="scroll-mt-20 space-y-3">
+            
+            <!-- 画像の直前（前行）に配置したスワイプ案内テキスト -->
+            <div class="flex justify-between items-center text-[10px] text-textMuted font-sans tracking-wider px-0.5">
+                <span>WORKS</span>
+                <span>← 左右にフリックで移動 →</span>
+            </div>
 
-            <!-- No.01 幾何学 -->
-            <article id="work-01" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[2/3] h-[47vh] overflow-hidden rounded-sm">
-                    <img src="img\DSC00154.JPG" alt="幾何学" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <!-- <span class="absolute top-3 left-3 bg-black text-white font-cinzel text-[9px] font-bold px-2 py-0.5 tracking-wider">LARGE PRINT</span> -->
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 01</span>
+            <!-- 写真ステージ（12個のドットを画像上に配置） -->
+            <div id="artwork-stage" class="relative bg-gray-100 overflow-hidden rounded-sm select-none cursor-pointer flex items-center justify-center">
+                <!-- 中央配置 & オブジェクトコンテイン -->
+                <img id="artwork-img" src="" alt="" class="block mx-auto max-w-full max-h-full object-contain">
+                
+                <!-- 写真右上の作品番号 -->
+                <span id="artwork-badge" class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5 z-10">No. 01</span>
+                
+                <!-- 写真の下部に配置した12個のドットインジケーター -->
+                <div id="dots-container" class="absolute bottom-3 left-0 right-0 flex justify-center items-center gap-1.5 z-20">
+                    <!-- JSで12個のドットを生成 -->
+                </div>
+            </div>
+
+            <!-- 作品情報テキスト -->
+            <div class="space-y-3 pt-1">
+                <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
+                    <div>
+                        <h3 id="artwork-title" class="text-xl font-bold text-textMain tracking-wide">幾何学</h3>
+                        <p id="artwork-location" class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ 東京国際フォーラム</p>
+                    </div>
+                    <span id="artwork-en-title" class="font-cinzel text-sm text-textMuted font-medium">Kikagaku</span>
                 </div>
 
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">幾何学</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ 東京国際フォーラム</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Kikagaku</span>
-                    </div>
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            表題のとおり、圧倒的な幾何学模様が素敵な建築を撮影しました。<br>
-                            平日、仕事を休んで撮影に出向いた際、日暮れの時間帯に撮影したのですが、通い慣れた会社帰りの社会人の方たちの目線はこの建築ではなく、自身のスマホに向いていました。<br>
-                            観光を兼ねて撮影をしている自分と、この景色では見え方にギャップがあるということですね。<br>
-                            人にはヒトの乳酸菌ってやつ。
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- No.02 孤高 -->
-            <article id="work-02" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[3/2] overflow-hidden rounded-sm">
-                    <img src="img\DSC01125.JPG" alt="孤高" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <!-- <span class="absolute top-3 left-3 bg-black text-white font-cinzel text-[9px] font-bold px-2 py-0.5 tracking-wider">LARGE PRINT</span> -->
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 02</span>
+                <div class="space-y-1">
+                    <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
+                    <p id="artwork-desc" class="text-xs text-textMain leading-relaxed font-sans whitespace-pre-line">
+                        作品解説がここに入ります。
+                    </p>
                 </div>
 
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">孤高</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ 城山</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Kokō</span>
-                    </div>
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            伊豆縦貫道から見える明らかに他と異質の山。<br>
-                            岩肌がむき出しのビジュアルに重厚感を感じますね。<br>
-                            この山は、ぜひ実際に見ていただきたい。<br>
-                            真っ暗で何も見えないのをわかっていたけれど、夜に撮影するのが面白そうと思い、21時から真っ暗な狩野川河川敷に三脚を立てて撮影をしてみました。<br>
-                            撮影終わりに目が慣れてきて、三脚から200m程離れたところにシカが10匹ほど群れているのに気づき、場違いで、孤独であると思わされたのも表題の由来です。<br>
-                            繁殖期のシカに襲われなくてよかった。
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
+                <div class="pt-2 text-right">
+                    <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
+                        ▲ 目次に戻る
+                    </a>
                 </div>
-            </article>
-
-            <!-- No.03 伝統 -->
-            <article id="work-03" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[3/2] overflow-hidden rounded-sm">
-                    <img src="img\DSC02029.JPG" alt="伝統" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <!-- <span class="absolute top-3 left-3 bg-black text-white font-cinzel text-[9px] font-bold px-2 py-0.5 tracking-wider">LARGE PRINT</span> -->
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 03</span>
-                </div>
-
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">伝統</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ 日枝神社</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Dentō</span>
-                    </div>
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            僕の大好きな修善寺温泉街にある神社をスナップしました。<br>
-                            この撮影とは別で修善寺に来ていた時にしめ縄にクローズアップしたスナップが素敵だったので、それを思い出して、お神輿の日に足を運びスナップしました。<br>
-                            普段は時間がゆっくり過ぎるようなのんびりした雰囲気の温泉街に熱を感じる1日でした。
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- No.04 碁盤 -->
-            <article id="work-04" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[3/2] overflow-hidden rounded-sm">
-                    <img src="img\A3DA4E72-9BED-4125-84DE-D4F78BE93AB0.jpg" alt="碁盤" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <!-- <span class="absolute top-3 left-3 bg-black text-white font-cinzel text-[9px] font-bold px-2 py-0.5 tracking-wider">LARGE PRINT</span> -->
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 04</span>
-                </div>
-
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">碁盤</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ 東京駅</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Goban</span>
-                    </div>
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            柱が水平・垂直に交差している様子を、そのまま表題にしてみました。<br>
-                            国際フォーラムから東京駅に向かうその足でスナップした1枚。<br>
-                            小雨でウェットな路面が光の反射を生み出して、景観に彩りをもたらしてくれました。<br>
-                            建築や柱、車など、さまざまな要素がまばらに配置され、一見しただけでは何を写したのか分かりづらい写真。<br>
-                            こうした作品は好みが分かれるかもしれませんが、僕はこのような抽象的な表現が好きだったりします。<br>
-                            僕の世界観が現れた1枚です。 <br>
-                            どうぞ、ぼんやり眺めてやってください。<br>
-
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- No.05 象徴 -->
-            <article id="work-05" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[3/2] overflow-hidden rounded-sm">
-                    <img src="img\DSC01760.JPG" alt="象徴" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 05</span>
-                </div>
-
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">象徴</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ ふじのくに田子の浦みなと公園</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Shōchō</span>
-                    </div>
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            言わずと知れた日本一の山。<br>
-                            静岡東部や富士五湖周辺から見る富士山はどこも綺麗で、現地の方にとっては雲で隠れていなければいつでも見える常に身近な存在ですよね。<br>
-                            しかし、身近だからこそ素通りしてしまう富士山の魅力がきっとあるはずです。<br>
-                            生まれた時から富士山を身近に感じている方々に、日本の象徴のすごさを改めて感じてほしいというメッセージを込めて作品にしました。
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- No.06 息吹 -->
-            <article id="work-06" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[3/2] overflow-hidden rounded-sm">
-                    <img src="img\DSC00733.JPG" alt="息吹" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 06</span>
-                </div>
-
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">息吹</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ 富士山麓</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Ibuki</span>
-                    </div>
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            富士宮口五合目へ向かう途中で車を停めて撮影した1枚。<br>
-                            溶岩の独特な凹凸に苔生す景色は特有のものがありました。<br>
-                            初めて富士山麓に行ってみましたが、地上とはかけ離れた幻想的な自然に圧倒されました。<br>
-                            外から見ただけではわからない、富士山の息遣いを感じられた気がします。
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- No.07 妖艶 -->
-            <article id="work-07" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[3/2] overflow-hidden rounded-sm">
-                    <img src="img\DSC00768.JPG" alt="妖艶" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 07</span>
-                </div>
-
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">妖艶</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ 沼久保地区 水辺の楽校</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Yōen</span>
-                    </div>
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            秋深まる前、まだ残暑が残る時期の早朝に撮影を行いました。<br>
-                            ローキーなテイストで撮影された彼岸花がものすごく好きで今年も撮影に行きました。<br>
-                            この花特有の色味と凛とした背の高い一輪の花が魅力の1枚です。
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- No.08 残滓 -->
-            <article id="work-08" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[3/2] overflow-hidden rounded-sm">
-                    <img src="img\DSC01210.JPG" alt="残滓" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 08</span>
-                </div>
-
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">残滓</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ 仙石原</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Zanshi</span>
-                    </div>
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            今年も特有の甘い香りで秋の訪れを感じる人も多いのではないでしょうか。<br>
-                            この花を撮りたくて、香りを頼りに箱根の仙石原を散策していたら、終わりかけの金木犀を見つけました。<br>
-                            香りが導いてくれた小さな花びらを、肉眼で見るよりも大きく表現した世界観を楽しんでいただきたいです。
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- No.09 螺旋 -->
-            <article id="work-09" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[2/3] h-[47vh] overflow-hidden rounded-sm">
-                    <img src="img\DSC01420.JPG" alt="螺旋" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 09</span>
-                </div>
-
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">螺旋</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ 高輪ゲートウェイシティ</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Rasen</span>
-                    </div>
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            近未来的な曲線美が表現された都市建築を撮影しました。<br>
-                            車通りの少ない道での撮影でしたが、Uターン等のイレギュラーな挙動をしてくれるタイミングを逃さなかったことで建築とリンクする車のライトの軌跡を表現でき、非常に気に入っています。<br>
-                            個人的に、この写真のような夜空に浮かぶ雲の色味がすごく好き。<br>
-                            共感してくれる人とは仲良くなれそうです。
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- No.10 黄昏 -->
-            <article id="work-10" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[3/2] overflow-hidden rounded-sm">
-                    <img src="img\DSC02073.JPG" alt="黄昏" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 10</span>
-                </div>
-
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">黄昏</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ 西伊豆スカイライン</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Tasogare</span>
-                    </div>
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            本当は展示するつもりではなかったのですが、たまたま立ち寄った際に撮影した1枚が素敵だったので作品に昇華しました。<br>
-                            個人的にカップルと車が写りこんでいるのが、雄大な景色に日常感をもたらしてくれていてアクセントになっています。<br>
-                            これらが写ってなかったらお蔵入りになるところでした。
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- No.11 静寂 -->
-            <article id="work-11" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[3/2] overflow-hidden rounded-sm">
-                    <img src="img\DSC01480.JPG" alt="静寂" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 11</span>
-                </div>
-
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">静寂</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ お台場海浜公園</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Seijaku</span>
-                    </div>
-                    
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            都内の夜景と革の銀面のような質感を持つ海辺を写真で表現してみました。<br>
-                            都内の夜更けとさざ波がマッチしていて、見ているだけで心地よく感じます。<br>
-                            どうでもいいことですが、健康的な生活を送りたいので日付が変わる頃には寝ていたいのですが、夜景を撮るのが一番好きなので夜更かしをしてしまいます。<br>
-                            その矛盾を何とかしたいと思っているのですがいい案があったらそっと教えてください。
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- No.12 鎹 -->
-            <article id="work-12" class="scroll-mt-20 space-y-4">
-                <div class="relative bg-gray-100 aspect-[2/3] h-[47vh] overflow-hidden rounded-sm">
-                    <img src="img\DSC01852.JPG" alt="鎹" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/f3f3f3/333333?text=Photo+Unavailable'">
-                    <span class="absolute top-3 right-3 bg-white/90 text-black font-cinzel text-xs px-2 py-0.5">No. 12</span>
-                </div>
-
-                <div class="space-y-3">
-                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-2">
-                        <div>
-                            <h3 class="text-xl font-bold text-textMain tracking-wide">鎹</h3>
-                            <p class="text-xs text-textMuted font-sans mt-0.5">撮影地 ｜ 修善寺温泉街</p>
-                        </div>
-                        <span class="font-cinzel text-sm text-textMuted font-medium">Kasugai</span>
-                    </div>
-
-                    <div class="space-y-1">
-                        <p class="text-[10px] font-bold text-textMuted uppercase tracking-widest font-sans">作品解説</p>
-                        <p class="text-xs text-textMain leading-relaxed font-sans">
-                            制作期間中、普段からお世話になっている修善寺のカフェに足を運び、撮影ロケでいいところがないか相談をしていたところ、たまたま温泉街で人力車を引いている常連のお客様に声をかけていただき出来上がった1枚です。<br>
-                            撮影の前後に観光客の方を相手に観光地と人とをつなげる鎹となっている姿を拝見して、修善寺の街の温かさを感じ、この場所がますます好きになりました。<br>
-                            この写真展もyukoさんやcafe156さんからお声がけをいただかなければ僕の展示はなかったですし、地元民でもない僕によくしていただいているすべての方との繋がりを“鎹”という言葉に込めた1枚です。<br>
-                            もちろんこの写真展に足を運んでくださった皆様への思いも込めて。
-                        </p>
-                    </div>
-
-                    <div class="pt-2 text-right">
-                        <a href="#index-section" class="text-[11px] text-textMuted hover:text-black font-sans transition-colors">
-                            ▲ 目次に戻る
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-        </div>
+            </div>
+        </section>
 
         <!-- フッター -->
         <footer class="pt-8 pb-5 border-t border-gray-100 text-center space-y-2">
@@ -578,15 +163,251 @@
 
     </main>
 
-    <!-- 右下固定：目次へ戻る浮遊ボタン（シンプルデザイン）
-    <a href="#index-section" 
-       id="backToTopBtn" 
-       class="fixed bottom-6 right-5 z-50 bg-black text-white font-sans text-xs px-3.5 py-2.5 rounded-full shadow-lg flex items-center gap-1.5 transition-all duration-200 active:scale-90">
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
-        </svg>
-        <span>目次</span>
-    </a> -->
+    <script>
+        // 全12作品データ
+        const artworks = [
+            {
+                no: "01",
+                title: "幾何学",
+                en: "Kikagaku",
+                location: "撮影地 ｜ 東京国際フォーラム",
+                desc: "表題のとおり、圧倒的な幾何学模様が素敵な建築を撮影しました。\n平日、仕事を休んで撮影に出向いた際、日暮れの時間帯に撮影したのですが、通い慣れた会社帰りの社会人の方たちの目線はこの建築ではなく、自身のスマホに向いていました。\n観光を兼ねて撮影をしている自分と、この景色では見え方にギャップがあるということですね。\n人にはヒトの乳酸菌ってやつ。",
+                image: "img/DSC00154.JPG",
+                aspect: "aspect-[2/3] max-w-[220px] mx-auto"
+            },
+            {
+                no: "02",
+                title: "孤高",
+                en: "Kokō",
+                location: "撮影地 ｜ 城山",
+                desc: "伊豆縦貫道から見える明らかに他と異質の山。\n岩肌がむき出しのビジュアルに重厚感を感じますね。\nこの山は、ぜひ実際に見ていただきたい。\n真っ暗で何も見えないのをわかっていたけれど、夜に撮影するのが面白そうと思い、21時から真っ暗な狩野川河川敷に三脚を立てて撮影をしてみました。\n撮影終わりに目が慣れてきて、三脚から200m程離れたところにシカが10匹ほど群れているのに気づき、場違いで、孤独であると思わされたのも表題の由来です。\n繁殖期のシカに襲われなくてよかった。",
+                image: "img/DSC01125.JPG",
+                aspect: "aspect-[3/2] w-full"
+            },
+            {
+                no: "03",
+                title: "伝統",
+                en: "Dentō",
+                location: "撮影地 ｜ 日枝神社",
+                desc: "僕の大好きな修善寺温泉街にある神社をスナップしました。\nこの撮影とは別で修善寺に来ていた時にしめ縄にクローズアップしたスナップが素敵だったので、それを思い出して、お神輿の日に足を運びスナップしました。\n普段は時間がゆっくり過ぎるようなのんびりした雰囲気の温泉街に熱を感じる1日でした。",
+                image: "img/DSC02029.JPG",
+                aspect: "aspect-[3/2] w-full"
+            },
+            {
+                no: "04",
+                title: "碁盤",
+                en: "Goban",
+                location: "撮影地 ｜ 東京駅",
+                desc: "柱が水平・垂直に交差している様子を、そのまま表題にしてみました。\n東京国際フォーラムから東京駅に向かうその足でスナップした1枚。\n小雨でウェットな路面が光の反射を生み出して、景観に彩りをもたらしてくれました。\n建築や柱、車など、さまざまな要素がまばらに配置され、一見しただけでは何を写したのか分かりづらい写真。\nこうした作品は好みが分かれるかもしれませんが、僕はこのような抽象的な表現が好きだったりします。\n僕の世界観が現れた1枚です。\nどうぞ、ぼんやり眺めてやってください。",
+                image: "img/A3DA4E72-9BED-4125-84DE-D4F78BE93AB0.jpg",
+                aspect: "aspect-[3/2] w-full"
+            },
+            {
+                no: "05",
+                title: "象徴",
+                en: "Shōchō",
+                location: "撮影地 ｜ ふじのくに田子の浦みなと公園",
+                desc: "言わずと知れた日本一の山。\n静岡東部や富士五湖周辺から見る富士山はどこも綺麗で、現地の方にとっては雲で隠れていなければいつでも見える常に身近な存在ですよね。\nしかし、身近だからこそ素通りしてしまう富士山の魅力がきっとあるはずです。\n生まれた時から富士山を身近に感じている方々に、日本の象徴のすごさを改めて感じてほしいというメッセージを込めて作品にしました。",
+                image: "img/DSC01760.JPG",
+                aspect: "aspect-[3/2] w-full"
+            },
+            {
+                no: "06",
+                title: "息吹",
+                en: "Ibuki",
+                location: "撮影地 ｜ 富士山麓",
+                desc: "富士宮口五合目へ向かう途中で車を停めて撮影した1枚。\n溶岩の独特な凹凸に苔生す景色は特有のものがありました。\n初めて富士山麓に行ってみましたが、地上とはかけ離れた幻想的な自然に圧倒されました。\n外から見ただけではわからない、富士山の息遣いを感じられた気がします。",
+                image: "img/DSC00733.JPG",
+                aspect: "aspect-[3/2] w-full"
+            },
+            {
+                no: "07",
+                title: "妖艶",
+                en: "Yōen",
+                location: "撮影地 ｜ 沼久保地区 水辺の楽校",
+                desc: "秋深まる前、まだ残暑が残る時期の早朝に撮影を行いました。\nローキーなテイストで撮影された彼岸花がものすごく好きで今年も撮影に行きました。\nこの花特有の色味と凛とした背の高い一輪の花が魅力の1枚です。",
+                image: "img/DSC00768.JPG",
+                aspect: "aspect-[3/2] w-full"
+            },
+            {
+                no: "08",
+                title: "残滓",
+                en: "Zanshi",
+                location: "撮影地 ｜ 仙石原",
+                desc: "今年も特有の甘い香りで秋の訪れを感じる人も多いのではないでしょうか。\nこの花を撮りたくて、香りを頼りに箱根の仙石原を散策していたら、終わりかけの金木犀を見つけました。\n香りが導いてくれた小さな花びらを、肉眼で見るよりも大きく表現した世界観を楽しんでいただきたいです。",
+                image: "img/DSC01210.JPG",
+                aspect: "aspect-[3/2] w-full"
+            },
+            {
+                no: "09",
+                title: "螺旋",
+                en: "Rasen",
+                location: "撮影地 ｜ 高輪ゲートウェイシティ",
+                desc: "近未来的な曲線美が表現された都市建築を撮影しました。\n車通りの少ない道での撮影でしたが、Uターン等のイレギュラーな挙動をしてくれるタイミングを逃さなかったことで建築とリンクする車のライトの軌跡を表現でき、非常に気に入っています。\n個人的に、この写真のような夜空に浮かぶ雲の色味がすごく好き。\n共感してくれる人とは仲良くなれそうです。",
+                image: "img/DSC01420.JPG",
+                aspect: "aspect-[2/3] max-w-[220px] mx-auto"
+            },
+            {
+                no: "10",
+                title: "黄昏",
+                en: "Tasogare",
+                location: "撮影地 ｜ 西伊豆スカイライン",
+                desc: "本当は展示するつもりではなかったのですが、たまたま立ち寄った際に撮影した1枚が素敵だったので作品に昇華しました。\n個人的にカップルと車が写りこんでいるのが、雄大な景色に日常感をもたらしてくれていてアクセントになっています。\nこれらが写ってなかったらお蔵入りになるところでした。",
+                image: "img/DSC02073.JPG",
+                aspect: "aspect-[3/2] w-full"
+            },
+            {
+                no: "11",
+                title: "静寂",
+                en: "Seijaku",
+                location: "撮影地 ｜ お台場海浜公園",
+                desc: "都内の夜景と革の銀面のような質感を持つ海辺を写真で表現してみました。\n都内の夜更けとさざ波がマッチしていて、見ているだけで心地よく感じます。\nどうでもいいことですが、健康的な生活を送りたいので日付が変わる頃には寝ていたいのですが、夜景を撮るのが一番好きなので夜更かしをしてしまいます。\nその矛盾を何とかしたいと思っているのですがいい案があったらそっと教えてください。",
+                image: "img/DSC01480.JPG",
+                aspect: "aspect-[3/2] w-full"
+            },
+            {
+                no: "12",
+                title: "鎹",
+                en: "Kasugai",
+                location: "撮影地 ｜ 修善寺温泉街",
+                desc: "制作期間中、普段からお世話になっている修善寺のカフェに足を運び、撮影ロケでいいところがないか相談をしていたところ、たまたま温泉街で人力車を引いている常連のお客様に声をかけていただき出来上がった1枚です。\n撮影の前後に観光客の方を相手に観光地と人とをつなげる鎹となっている姿を拝見して、修善寺の街の温かさを感じ、この場所がますます好きになりました。\nこの写真展もyukoさんやcafe156さんからお声がけをいただかなければ僕の展示はなかったですし、地元民でもない僕によくしていただいているすべての方との繋がりを“鎹”という言葉に込めた1枚です。\nもちろんこの写真展に足を運んでくださった皆様への思いも込めて。",
+                image: "img/DSC01852.JPG",
+                aspect: "aspect-[2/3] max-w-[220px] mx-auto"
+            }
+        ];
 
+        let currentIndex = 0;
+
+        // DOM要素
+        const portfolioGrid = document.getElementById('portfolio-grid');
+        const artworkStage = document.getElementById('artwork-stage');
+        const artworkImg = document.getElementById('artwork-img');
+        const artworkBadge = document.getElementById('artwork-badge');
+        const dotsContainer = document.getElementById('dots-container');
+        const artworkTitle = document.getElementById('artwork-title');
+        const artworkEnTitle = document.getElementById('artwork-en-title');
+        const artworkLocation = document.getElementById('artwork-location');
+        const artworkDesc = document.getElementById('artwork-desc');
+
+        // ページ読み込み時にURLのハッシュ（#〜）をクリアし、強制的に最上部へスクロール
+        if (window.location.hash) {
+            history.replaceState(null, null, window.location.pathname + window.location.search);
+        }
+        window.scrollTo(0, 0);
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // グリッド目次の動的生成
+        function renderGrid() {
+            portfolioGrid.innerHTML = '';
+            artworks.forEach((art, index) => {
+                const a = document.createElement('a');
+                // タップしたときだけ詳細エリアへスクロール（URLハッシュを残さない）
+                a.href = 'javascript:void(0);';
+                a.className = 'flex flex-col items-center justify-center p-3 bg-gray-50 hover:bg-gray-100 active:scale-95 transition-all text-center rounded';
+                a.innerHTML = `
+                    <span class="text-[9px] text-textMuted font-cinzel">No. ${art.no}</span>
+                    <span class="text-xs text-textMain truncate w-full mt-0.5 font-serif">${art.title}</span>
+                `;
+                a.addEventListener('click', () => {
+                    selectArtwork(index);
+                    document.getElementById('detail-section').scrollIntoView({ behavior: 'smooth' });
+                });
+                portfolioGrid.appendChild(a);
+            });
+        }
+
+        // 12個のドットインジケーターを生成
+        function renderDots() {
+            dotsContainer.innerHTML = '';
+            artworks.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentIndex ? 'bg-white scale-125 shadow' : 'bg-white/40 hover:bg-white/70'
+                }`;
+                dot.setAttribute('aria-label', `作品 No.${index + 1}`);
+                dot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    selectArtwork(index);
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        // 作品の切り替え
+        function selectArtwork(index, isSlide = true) {
+            if (index === currentIndex && isSlide) return;
+            currentIndex = index;
+
+            if (isSlide) {
+                artworkImg.classList.add('fade-out');
+                setTimeout(() => {
+                    updateContent();
+                    artworkImg.classList.remove('fade-out');
+                }, 150);
+            } else {
+                updateContent();
+            }
+        }
+
+        function updateContent() {
+            const art = artworks[currentIndex];
+            artworkImg.src = art.image;
+            artworkImg.alt = art.title;
+            artworkBadge.textContent = `No. ${art.no}`;
+            artworkTitle.textContent = art.title;
+            artworkEnTitle.textContent = art.en;
+            artworkLocation.textContent = art.location;
+            artworkDesc.textContent = art.desc;
+
+            // 縦構図・横構図のアスペクト比適用
+            artworkStage.className = `relative bg-gray-100 overflow-hidden rounded-sm select-none cursor-pointer flex items-center justify-center ${art.aspect}`;
+
+            renderDots();
+        }
+
+        // 端っこ（1番目・12番目）でストップするフリック・移動処理
+        function goToPrev() {
+            if (currentIndex > 0) {
+                selectArtwork(currentIndex - 1);
+            }
+        }
+
+        function goToNext() {
+            if (currentIndex < artworks.length - 1) {
+                selectArtwork(currentIndex + 1);
+            }
+        }
+
+        // --- フリック（スワイプ）検知の実装 ---
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const minSwipeDistance = 30;
+
+        artworkStage.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        artworkStage.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const distance = touchEndX - touchStartX;
+            if (Math.abs(distance) < minSwipeDistance) return;
+
+            if (distance > 0) {
+                goToPrev();
+            } else {
+                goToNext();
+            }
+        }
+
+        // 初期化
+        renderGrid();
+        updateContent();
+    </script>
 </body>
 </html>
